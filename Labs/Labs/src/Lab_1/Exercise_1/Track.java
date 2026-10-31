@@ -22,12 +22,11 @@ public class Track {
     // Full constructor
     // -------------------------------------------------------
     public Track(String title, String artist, int durationSeconds, boolean isExplicit) {
-        // Transfers the definitions to the object
         this.title = title;
         this.artist = artist;
         this.isExplicit = isExplicit;
 
-        // Checks the duration if it's smaller than 0
+        // Checks if the duration value is negative
         if (durationSeconds < 0) {
             System.out.println("Warning: Invalid duration. Setting to 0.");
             this.durationSeconds = 0;
@@ -47,7 +46,7 @@ public class Track {
     // Title-only constructor.
     // -------------------------------------------------------
     public Track(String title) {
-        this(title, "Unkown Artist", 0, false);
+        this(title, "Unknown Artist", 0, false);
     }
 
     // -------------------------------------------------------
@@ -58,7 +57,7 @@ public class Track {
     }
 
     // -------------------------------------------------------
-    // TODO 5: Getters for all four fields.
+    // Getters for all four fields.
     // -------------------------------------------------------
     public String getTitle() {
         return title;
@@ -77,7 +76,7 @@ public class Track {
     }
 
     // -------------------------------------------------------
-    // TODO 6: getDurationFormatted()
+    // getDurationFormatted()
     // -------------------------------------------------------
     public String getDurationFormatted() {
         int minutes = durationSeconds / 60;
@@ -87,7 +86,7 @@ public class Track {
     }
 
     // -------------------------------------------------------
-    // TODO 7: toString()
+    // toString()
     // -------------------------------------------------------
     @Override
     public String toString() {
