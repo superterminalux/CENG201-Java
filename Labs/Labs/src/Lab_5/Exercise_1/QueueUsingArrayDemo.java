@@ -56,7 +56,12 @@ public class QueueUsingArrayDemo {
         //System.out.println("Queue Size: " + queue.size());
 
         /*
-        ANSWER:
-         */
+ANSWER:
+1. Why it gives an error:
+Our queue is a "Linear Queue". When we added 10 items, the 'rear' index reached the end of the array (index 9). We removed 3 items, so the 'count' dropped to 7. The isFull() method says "not full". However, when we try to add the 11th item, 'rear' increases to 10. Since the array capacity is 10 (max index is 9), it crashes with an "ArrayIndexOutOfBoundsException".
+
+2. What can we use to add the 11th student:
+We must use a "Circular Queue". We can do this by using the modulo operator (%). Instead of just 'rear++', we should write 'rear = (rear + 1) % items.length'. This forces the 'rear' pointer to loop back to the empty spaces (index 0) at the beginning of the array.
+*/
     }
 }
